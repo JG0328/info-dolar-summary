@@ -101,17 +101,11 @@
                         </div>
 
                         <!-- Date (if available) -->
-                        <ClientOnly>
-                            <div v-if="item.date"
-                                class="text-gray-500 text-sm text-center mt-6 pt-4 border-t border-gray-800">
-                                {{ new Date(item.date).toLocaleString('es-DO', {
-                                    month: 'short',
-                                    day: 'numeric',
-                                    hour: '2-digit',
-                                    minute: '2-digit'
-                                }) }}
-                            </div>
-                        </ClientOnly>
+                        <div v-if="item.date"
+                            class="text-gray-500 text-sm text-center mt-6 pt-4 border-t border-gray-800">
+                            <NuxtTime :datetime="new Date(item.date)" locale="es-DO" month="short" day="numeric"
+                                hour="2-digit" minute="2-digit" />
+                        </div>
                     </div>
                 </div>
             </div>
